@@ -5,7 +5,7 @@ Adafruit_MLX90393 sensor = Adafruit_MLX90393();
 
 // constants won't change. They're used here to set pin numbers:
 const int buttonPin = 4;     // the number of the pushbutton pin
-const int ledPin =  13;      // the number of the LED pin
+//const int ledPin =  13;      // the number of the LED pin
 
 // variables will change:
 int buttonState = 0;         // variable for reading the pushbutton status
@@ -14,7 +14,7 @@ int16_t data_pt;
 void setup() {
   
   // initialize the LED pin as an output:
-  pinMode(ledPin, OUTPUT);
+  //pinMode(ledPin, OUTPUT);
   // initialize the pushbutton pin as an input:
   pinMode(buttonPin, INPUT);
   
@@ -35,7 +35,7 @@ void setup() {
   }
   Serial.println("Found a MLX90393 sensor");
 
-  sensor.setGain(MLX90393_GAIN_5X);
+  sensor.setGain(MLX90393_GAIN_1X);
   // You can check the gain too
   Serial.print("Gain set to: ");
   switch (sensor.getGain()) {
@@ -58,7 +58,7 @@ void setup() {
   sensor.setOversampling(MLX90393_OSR_3);
 
   // Set digital filtering
-  sensor.setFilter(MLX90393_FILTER_6);
+  sensor.setFilter(MLX90393_FILTER_7);
 }
 
 void loop() {
@@ -116,10 +116,10 @@ void OLDloop() {
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
   if (buttonState == HIGH) {
     // turn LED on:
-    digitalWrite(ledPin, HIGH);
+    //digitalWrite(ledPin, HIGH);
   } else {
     // turn LED off:
-    digitalWrite(ledPin, LOW);
+    //digitalWrite(ledPin, LOW);
   }
   
   // put your main code here, to run repeatedly:
