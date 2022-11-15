@@ -17,9 +17,9 @@ There are two ways to trigger a reading.  Either enter "r" followed by "Enter" i
 The silkscreen on the adafruit board indicates the sensor coordinates, but is wrong. At least in the model I have, the directions for X and Y vectors should be changed. Refer to either the MLX90393 chip datasheet, or for reference, sparkfun has a similar board, but their silkscreen is correct. [https://www.sparkfun.com/products/retired/14160](https://www.sparkfun.com/products/retired/14160) 
 
 ## Code Install Notes
-The code I have here is an evolution on the code I used to use for the Xtrinsic sensors board with the MAG3110 sensor.  In this case, I used the adafruit mlx90393 library unchanged: [github library](https://github.com/adafruit/Adafruit_MLX90393_Library), commit 0115f42....  It should be installed in the arduino libraries directory (wherever that is on your system).  In may case, Ubuntu 20.04, Arduino 1.8.14, the libraries directory is ~/Arduino/libraries/Adafruit_MLX90393/. I'll provide a copy of the library with the code. 
+The code I have here is an evolution on the code I used to use for the Xtrinsic sensors board with the MAG3110 sensor. I this case, I began by using the adafruit mlx90393 library: [github library](https://github.com/adafruit/Adafruit_MLX90393_Library) based off commit 0115f42...  I am now modifiying the library to add the ablity to read offsets and raw data (readRegister, tranceive moved to public:). These libraries can in general be installed using the Arduino IDE, but in this case the included modified library (Adafruit_MLX90393_TPW) should be installed in the arduino libraries directory (wherever that is on your system).  In may case, Ubuntu 20.04, Arduino 1.8.14, the libraries directory is ~/Arduino/libraries/Adafruit_MLX90393/.
 
-The code itself needs to be in a parent directory that matches it's name, i.e. MLX90393_B/MLX90393_B.ino.
+The code itself needs to be in a parent directory that matches it's name, i.e. BField_MLX90393/BField_MLX90393.ino.
 
 ## Code Notes:
 
